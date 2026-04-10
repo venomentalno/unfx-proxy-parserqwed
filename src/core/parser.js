@@ -26,7 +26,7 @@ export default class Parser {
 
     async parse(url, retry) {
         try {
-            const html = await rp.get({ url, timeout: 5000 });
+            const html = await rp.get({ url, timeout: this.config.timeout });
             this.onResponse(url, html);
         } catch (error) {
             this.onError(url, retry);
