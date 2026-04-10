@@ -24,9 +24,9 @@ const normalizeUrls = urls => {
 export const start = () => async (dispatch, getState) => {
     try {
         const {
-            main: { threads, retry, deep, external, level, input }
+            main: { threads, retry, deep, external, level, input, timeout }
         } = getState();
-        saveSettings({ main: { threads, retry, deep, external, level, input } });
+        saveSettings({ main: { threads, retry, deep, external, level, input, timeout } });
 
         if (deep) {
             dispatch(startCrawling());
@@ -37,7 +37,7 @@ export const start = () => async (dispatch, getState) => {
 
         dispatch(startParsing(links.length));
 
-        const results = await new Parser({ threads, retry }, links);
+        const results = await new Parser({ threads, retry, timeout }, links);
 
         dispatch(showResults(results));
     } catch (error) {

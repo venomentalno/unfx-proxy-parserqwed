@@ -1,8 +1,12 @@
-node_modules
-npm-debug.log
-settings.unfx.parser.json
-/public/*.js
-/.vscode
-dist
-package-lock.json
-tests
+```
+# Dependencies
+node_modules/
+
+# Editors
+.vscode/
+
+# Environment
+.env
+.env.local
+.env.*
+```

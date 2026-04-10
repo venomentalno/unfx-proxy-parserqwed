@@ -9,7 +9,8 @@ export const DEFAULT_MAIN_SETTINGS = {
     retry: false,
     deep: true,
     level: 2,
-    input: ''
+    input: '',
+    timeout: 5000
 };
 
 export const MERGED_DEFAULT_SETTINGS = {

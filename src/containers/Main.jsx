@@ -8,7 +8,7 @@ import Checkbox from '../components/ui/Checkbox';
 import '../../public/styles/Main.postcss';
 import '../../public/styles/Elements.postcss';
 
-const Main = ({ threads, retry, deep, external, level, input, changeOption, toggleOption, start }) => (
+const Main = ({ threads, retry, deep, external, level, timeout, input, changeOption, toggleOption, start }) => (
     <div className="main-page-container">
         <div className="main-page-content">
             <div className="blocks-row">
@@ -37,6 +37,17 @@ const Main = ({ threads, retry, deep, external, level, input, changeOption, togg
                     </div>
                     <div className="content no-bot">
                         <input type="range" name="level" min="1" max="15" onChange={changeOption} value={level} />
+                    </div>
+                </div>
+            </div>
+            <div className="blocks-row">
+                <div className="block slider middle">
+                    <div className="title">
+                        <span className="name">Timeout (ms)</span>
+                        <span className="value">{timeout}</span>
+                    </div>
+                    <div className="content no-bot">
+                        <input type="range" name="timeout" min="1000" max="30000" step="500" onChange={changeOption} value={timeout} />
                     </div>
                 </div>
             </div>
